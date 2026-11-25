@@ -116,7 +116,8 @@ def questionnaire():
 
 
 def officer(name, title, conditional):
-    terms = ("Approved business class for this trip, provided the trip meets the travel policy's requirements for it."
+    terms = (("Approved business class for this trip, provided the trip meets one of the conditions the travel policy "
+              "sets for business class.")
              if conditional else "Approved business class for this trip.")
     return sign("OFFICER", name, title, "PREMIUM_CABIN", terms, conditional)
 
@@ -200,8 +201,8 @@ scenario(
 
 scenario(
     "birch-ember", "easy", ["dearer_option"],
-    "I'm presenting at the European transplant congress in Paris on February 9th, flying overnight from Atlanta on "
-    "the 8th. Dr. Hale approved business class for this trip in writing. Business, please.",
+    "I'm presenting in the afternoon session of the European transplant congress in Paris on February 9th, flying "
+    "overnight from Atlanta on the 8th. Dr. Hale approved business class for this trip in writing. Business, please.",
     trip(traveller_name="Daniel Osei", traveller_title="Associate Professor of Surgery", origin="ATL",
          destination="CDG", travel_date="2027-02-08", booking_date="2027-01-11",
          purpose="Invited talk at a European transplant congress",
@@ -458,7 +459,8 @@ scenario(
          purpose="Present results at an international research consortium meeting", purpose_kind="RESEARCH_MEETING",
          funding="FEDERAL_AWARD", sponsor="National Institutes of Health (R01 research grant)",
          sign_offs=[supervisor("Andrew Feld", "Chair, Department of Pharmacology", "consortium meeting, Frankfurt"),
-                    questionnaire()]),
+                    questionnaire()],
+         notes=["The traveller has not checked whether Lufthansa is Open Skies compliant for this route."]),
     search("IAD", "FRA", "2027-05-10", {
         "united": {"carrier": "UA", "depart": "17:40", "minutes": [500]},
         "lufthansa": {"carrier": "LH", "depart": "18:05", "minutes": [505]},
@@ -521,7 +523,7 @@ scenario(
         offer("japan-economy", "japan", "ECONOMY", 129_500),
         offer("japan-business", "japan", "BUSINESS", 645_000),
     ]),
-    expected("BOOK", ["japan-economy"], ["ECONOMY"], ["SPONSOR_RESTRICTION"],
+    expected("BOOK", ["japan-economy"], ["ECONOMY"], ["SPONSOR_RESTRICTION", "UPGRADE_NOT_ELIGIBLE"],
              on_file("SUPERVISOR", "OFFICER", "EXPORT_COMPLIANCE"),
              [*AIR, "APPROVAL_TO_TRAVEL", "OTHER_CONSIDERATIONS"]),
     [SPONSOR, PREMIUM, SUPERVISOR],
@@ -553,7 +555,8 @@ scenario(
          sign_offs=[supervisor("Charles Abbott", "Chief Development Officer", "donor foundation board meeting, New York")],
          notes=["No approval for flying on a non-airline plane is on file."]),
     THISTLE_SEARCH,
-    expected("BOOK", ["redeye-economy"], ["ECONOMY"], ["PRIVATE_AIRCRAFT_NOT_APPROVED"], on_file("SUPERVISOR"),
+    expected("BOOK", ["redeye-economy"], ["ECONOMY"], ["PRIVATE_AIRCRAFT_NOT_APPROVED"],
+             on_file("SUPERVISOR", "RISK_MANAGEMENT", "CHIEF_FINANCIAL_OFFICER"),
              [*AIR, "PRIVATE_AIRCRAFT"]),
     [PRIVATE, LOWEST, SUPERVISOR],
     "Lines 134-138: a corporate jet is non-commercial aircraft, prohibited without written approval from Risk and "
@@ -726,7 +729,7 @@ scenario(
 
 scenario(
     "willow-brine", "flag", ["unclear_phrase"],
-    "Boston to Miami on April 12th for the nursing leadership conference. Premium economy please; I'd like the extra "
+    "Boston to Miami on April 12th for the nursing leadership conference, which opens the next morning. Premium economy please; I'd like the extra "
     "legroom on this one.",
     trip(traveller_name="Denise Carter", traveller_title="Nurse Manager, Medical ICU", origin="BOS", destination="MIA",
          travel_date="2027-04-12", booking_date="2027-03-15", purpose="Nursing leadership conference",
@@ -796,7 +799,7 @@ scenario(
 
 scenario(
     "zinnia-cobble", "flag", ["approval_required", "outside_air_section"],
-    "Charlotte to Austin on February 17th for the coding compliance training. My supervisor hasn't approved the trip "
+    "Charlotte to Austin on February 17th for the coding compliance training, which starts the next morning. My supervisor hasn't approved the trip "
     "yet (she's back Thursday), but can you take care of the flight?",
     trip(traveller_name="Jasmine Wright", traveller_title="Coding Compliance Analyst", origin="CLT", destination="AUS",
          travel_date="2027-02-17", booking_date="2027-01-19", purpose="Coding compliance training",

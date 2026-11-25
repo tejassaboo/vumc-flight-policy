@@ -137,7 +137,9 @@
     ],
     "approvers": [
       "NONE",
-      "SUPERVISOR"
+      "SUPERVISOR",
+      "RISK_MANAGEMENT",
+      "CHIEF_FINANCIAL_OFFICER"
     ],
     "clauses": [
       "AIR_TRAVEL",

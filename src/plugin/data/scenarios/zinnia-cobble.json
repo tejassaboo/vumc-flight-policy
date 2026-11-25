@@ -12,7 +12,7 @@
     "umber-cask"
   ],
   "ambiguity_note": "none: an approval is required and missing; the text is clear",
-  "request": "Charlotte to Austin on February 17th for the coding compliance training. My supervisor hasn't approved the trip yet (she's back Thursday), but can you take care of the flight?",
+  "request": "Charlotte to Austin on February 17th for the coding compliance training, which starts the next morning. My supervisor hasn't approved the trip yet (she's back Thursday), but can you take care of the flight?",
   "trip": {
     "traveller_name": "Jasmine Wright",
     "traveller_title": "Coding Compliance Analyst",

@@ -83,8 +83,12 @@ DURATION_RULES = (
 )
 LIMITS = {rule["name"]: rule["minutes"] for rule in DURATION_RULES}
 
-# Handbook-specific conventions shown by booking_requirements, beyond the template's (none here).
-CONVENTIONS = ()
+# Handbook-specific conventions shown by booking_requirements, beyond the template's. Lines 104-106 measure
+# "scheduled in-air" time; this says that a flight's scheduled minutes are that time, so no reader takes off taxi time.
+CONVENTIONS = (
+    ("A flight's scheduled_minutes is its scheduled time in the air, from takeoff to landing; time on the ground "
+     "between flights is the layover."),
+)
 
 # Line 149: the Fly America Act requires a U.S. air carrier for federally funded foreign travel.
 US_CARRIERS = ("American Airlines", "Delta Air Lines", "United Airlines", "Alaska Airlines", "JetBlue",
@@ -305,6 +309,8 @@ def economy_request(trip, pool, usable, economy, fly_america, international, not
             raise ValueError("a private aircraft with approvals on file is not modelled")
         reasons = [ReasonCode.PRIVATE_AIRCRAFT_NOT_APPROVED]
         clauses += [Clause.PRIVATE_AIRCRAFT]
+        # The roles whose missing approval decides it (as the officer in sable-wren), beside NONE and those on file.
+        relied = [Approver.RISK_MANAGEMENT, Approver.CHIEF_FINANCIAL_OFFICER]
         notes.append("lines 134-138: non-commercial aircraft are prohibited without written advance approval from "
                      "Risk and Insurance Management and the CFO, and none is on file: a commercial flight")
     elif trip.outside_option != OutsideOption.NONE:
@@ -335,7 +341,8 @@ def premium_cabin(trip, pool, economy, international, notes):
         notes.append("lines 396-399: the award's own terms limit air travel to economy class, and a sponsor's more "
                      "restrictive terms supersede the policy, so the officer's approval does not buy business: the "
                      "lowest economy fare")
-        return (Decision.BOOK, economy, [ReasonCode.SPONSOR_RESTRICTION], [],
+        # UPGRADE_NOT_ELIGIBLE too: the business seat asked for is not allowed on this award.
+        return (Decision.BOOK, economy, [ReasonCode.SPONSOR_RESTRICTION, ReasonCode.UPGRADE_NOT_ELIGIBLE], [],
                 [Clause.APPROVAL_TO_TRAVEL, Clause.OTHER_CONSIDERATIONS], "")
     if trip.sponsor_terms:
         raise ValueError("other sponsor terms are not modelled")

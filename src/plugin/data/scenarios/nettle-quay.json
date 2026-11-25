@@ -125,7 +125,8 @@
       "ECONOMY"
     ],
     "reason_codes": [
-      "SPONSOR_RESTRICTION"
+      "SPONSOR_RESTRICTION",
+      "UPGRADE_NOT_ELIGIBLE"
     ],
     "approvers": [
       "NONE",
