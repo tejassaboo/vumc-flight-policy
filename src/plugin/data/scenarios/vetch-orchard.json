@@ -1,0 +1,126 @@
+{
+  "id": "vetch-orchard",
+  "category": "refusal",
+  "overlays": [
+    "personal_travel",
+    "outside_air_section"
+  ],
+  "twin_of": "",
+  "twin_fact": "",
+  "flag_twins": [],
+  "ambiguity_note": "none",
+  "request": "After the Denver conference ends on the 19th I'm spending a few days of vacation in Las Vegas. Please book Denver to Las Vegas on March 20th through the travel tool.",
+  "trip": {
+    "traveller_name": "Allison Trent",
+    "traveller_title": "Pharmacy Operations Manager",
+    "passenger": "EMPLOYEE",
+    "accompanies": "",
+    "origin": "DEN",
+    "destination": "LAS",
+    "travel_date": "2027-03-20",
+    "return_date": "",
+    "booking_date": "2027-02-22",
+    "must_arrive_by": "",
+    "purpose": "Vacation in Las Vegas after a business conference in Denver",
+    "purpose_kind": "PERSONAL",
+    "funding": "DEPARTMENT_FUNDS",
+    "sponsor": "",
+    "sponsor_terms": [],
+    "requested_cabin": "ECONOMY",
+    "preferred_airline": "",
+    "self_paid_upgrade": "NONE",
+    "outside_option": "NONE",
+    "outside_option_detail": "",
+    "sign_offs": [
+      {
+        "role": "SUPERVISOR",
+        "name": "Philip Grant",
+        "title": "Director of Pharmacy",
+        "subject": "TRIP",
+        "subject_to_policy": false,
+        "terms": "Approved the trip: pharmacy operations conference, Denver, March 16-19."
+      }
+    ],
+    "travelling_with": [],
+    "notes": []
+  },
+  "world": {
+    "searches": [
+      {
+        "name": "main",
+        "origin": "DEN",
+        "destination": "LAS",
+        "date": "2027-03-20",
+        "return_date": "",
+        "background": 0,
+        "flights": {
+          "southwest": {
+            "carrier": "WN",
+            "depart": "09:30"
+          },
+          "united": {
+            "carrier": "UA",
+            "depart": "12:10"
+          }
+        },
+        "offers": [
+          {
+            "slot": "southwest-economy",
+            "flight": "southwest",
+            "cabin": "ECONOMY",
+            "fare_cents": 11900
+          },
+          {
+            "slot": "united-economy",
+            "flight": "united",
+            "cabin": "ECONOMY",
+            "fare_cents": 14200
+          }
+        ]
+      }
+    ]
+  },
+  "expected": {
+    "decision": "REFUSE",
+    "offer_slots": [],
+    "cabins": [
+      "NONE"
+    ],
+    "reason_codes": [
+      "OUTSIDE_POLICY_SCOPE",
+      "PERSONAL_TRAVEL_NOT_COVERED"
+    ],
+    "approvers": [
+      "NONE",
+      "SUPERVISOR"
+    ],
+    "clauses": [
+      "COMBINED_PERSONAL_AND_BUSINESS",
+      "OTHER_CONSIDERATIONS",
+      "UNALLOWABLE_EXPENSES"
+    ],
+    "unclear_phrase": ""
+  },
+  "must_keep": [
+    {
+      "lines": [
+        458,
+        461
+      ],
+      "sha256": "5bc664ad29377330b45878dcaf6957526f43fce03a48dac4a3b93d974b8bd32b",
+      "quote": "If personal travel is combined with VUMC business travel, only the business portion of the trip is reimbursable. VUMC's travel tool should not be used to make personal travel arrangements. You may use the travel agency to make personal travel arrangements; however, it is not reimbursable. \"In lieu of\" and \"tradeoff\" expense",
+      "why": "only the business portion is reimbursable; no personal travel on the travel tool"
+    },
+    {
+      "lines": [
+        523,
+        525
+      ],
+      "sha256": "07fe1ff33a27edf61e1df6b12048b349aaa6293527c2a59c12fb4d920b7681b2",
+      "quote": "Vacation and personal expenses when on business trips",
+      "why": "vacation and personal expenses on business trips are not reimbursable"
+    }
+  ],
+  "distractors": [],
+  "design_notes": "Lines 458-461: when personal travel is combined with VUMC business travel, only the business portion is reimbursable, and the travel tool should not be used for personal travel; lines 523-525 list vacation expenses on business trips as non-reimbursable. VUMC buys no ticket for the vacation leg."
+}

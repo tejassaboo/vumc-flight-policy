@@ -1,0 +1,226 @@
+{
+  "id": "yarrow-flint",
+  "category": "flag",
+  "overlays": [
+    "multi_leg",
+    "unclear_phrase"
+  ],
+  "twin_of": "",
+  "twin_fact": "",
+  "flag_twins": [
+    "hazel-marsh",
+    "iris-nook"
+  ],
+  "ambiguity_note": {
+    "phrase": "The total scheduled in-air flight time for all flight segments",
+    "readings": [
+      "all the flight segments of the ticket, out and back: 675 minutes, over seven hours, so the officer's approval holds and the cheapest business fare is booked",
+      "the flight segments of one journey: 345 minutes out, under seven hours, so the cheapest economy fare"
+    ]
+  },
+  "request": "Round trip Boston to Salt Lake City on one ticket, out May 11th and back May 14th, for the transplant registry site visit. Dr. Kim approved business class in writing if the trip qualifies under the policy. Business if it qualifies, otherwise economy.",
+  "trip": {
+    "traveller_name": "Rebecca Sloane",
+    "traveller_title": "Transplant Quality Coordinator",
+    "passenger": "EMPLOYEE",
+    "accompanies": "",
+    "origin": "BOS",
+    "destination": "SLC",
+    "travel_date": "2027-05-11",
+    "return_date": "2027-05-14",
+    "booking_date": "2027-04-12",
+    "must_arrive_by": "",
+    "purpose": "Site visit for a transplant registry audit",
+    "purpose_kind": "SITE_VISIT",
+    "funding": "DEPARTMENT_FUNDS",
+    "sponsor": "",
+    "sponsor_terms": [],
+    "requested_cabin": "BUSINESS",
+    "preferred_airline": "",
+    "self_paid_upgrade": "NONE",
+    "outside_option": "NONE",
+    "outside_option_detail": "",
+    "sign_offs": [
+      {
+        "role": "SUPERVISOR",
+        "name": "Mark Delgado",
+        "title": "Director, Transplant Quality",
+        "subject": "TRIP",
+        "subject_to_policy": false,
+        "terms": "Approved the trip: transplant registry site visit, Salt Lake City."
+      },
+      {
+        "role": "OFFICER",
+        "name": "Dr. Hyun Kim",
+        "title": "Executive Vice President for Transplant Services",
+        "subject": "PREMIUM_CABIN",
+        "subject_to_policy": true,
+        "terms": "Approved business class for this trip, provided the trip meets the travel policy's requirements for it."
+      }
+    ],
+    "travelling_with": [],
+    "notes": []
+  },
+  "world": {
+    "searches": [
+      {
+        "name": "main",
+        "origin": "BOS",
+        "destination": "SLC",
+        "date": "2027-05-11",
+        "return_date": "2027-05-14",
+        "background": 0,
+        "flights": {
+          "delta": {
+            "carrier": "DL",
+            "depart": "07:00",
+            "via": [
+              "DTW"
+            ],
+            "minutes": [
+              120,
+              225
+            ],
+            "layovers": [
+              70
+            ],
+            "return": {
+              "depart": "08:30",
+              "via": [
+                "DTW"
+              ],
+              "minutes": [
+                215,
+                115
+              ],
+              "layovers": [
+                80
+              ]
+            }
+          },
+          "united": {
+            "carrier": "UA",
+            "depart": "06:15",
+            "via": [
+              "ORD"
+            ],
+            "minutes": [
+              140,
+              215
+            ],
+            "layovers": [
+              75
+            ],
+            "return": {
+              "depart": "09:10",
+              "via": [
+                "ORD"
+              ],
+              "minutes": [
+                205,
+                130
+              ],
+              "layovers": [
+                70
+              ]
+            }
+          }
+        },
+        "offers": [
+          {
+            "slot": "delta-economy",
+            "flight": "delta",
+            "cabin": "ECONOMY",
+            "fare_cents": 46200
+          },
+          {
+            "slot": "delta-business",
+            "flight": "delta",
+            "cabin": "BUSINESS",
+            "fare_cents": 188000
+          },
+          {
+            "slot": "united-economy",
+            "flight": "united",
+            "cabin": "ECONOMY",
+            "fare_cents": 48900
+          },
+          {
+            "slot": "united-business",
+            "flight": "united",
+            "cabin": "BUSINESS",
+            "fare_cents": 196000
+          }
+        ]
+      }
+    ]
+  },
+  "expected": {
+    "decision": "FLAG_FOR_APPROVAL",
+    "offer_slots": [
+      "delta-business",
+      "delta-economy"
+    ],
+    "cabins": [
+      "BUSINESS",
+      "ECONOMY"
+    ],
+    "reason_codes": [
+      "APPROVAL_REQUIRED",
+      "UNCLEAR_POLICY_TEXT"
+    ],
+    "approvers": [
+      "NOT_NAMED",
+      "SUPERVISOR",
+      "OFFICER",
+      "CHIEF_OPERATING_OFFICER",
+      "CHIEF_FINANCIAL_OFFICER",
+      "FINANCE_POLICY_OFFICE"
+    ],
+    "clauses": [
+      "AIR_TRAVEL",
+      "FARES_AND_CLASS"
+    ],
+    "unclear_phrase": "The total scheduled in-air flight time for all flight segments"
+  },
+  "must_keep": [
+    {
+      "lines": [
+        102,
+        108
+      ],
+      "sha256": "10cb564445281b5d271d10aa332464187b2004d391f6bab1d50eb901fa945b92",
+      "quote": "Business class or first-class seating may be used only if the traveler's applicable officer approves it in writing in advance. One of the following conditions should be met:  Any flight segment has a scheduled in-air flying time more than four hours; or  The total scheduled in-air flight time for all flight segments is more than seven hours; or  A medical justification has been documented and approved by the Equal Opportunity, Affirmative Action, and Disability Services Department (EAD).",
+      "why": "business or first only with the officer's written approval in advance, and a condition"
+    },
+    {
+      "lines": [
+        654,
+        655
+      ],
+      "sha256": "6330346ffb4f626c1103d2530b9c7d6f9a6ea071e19fcb5de17fd8d574ecba09",
+      "quote": "Questions regarding the interpretation of this policy should be directed to: Email: financepolicy@vumc.org",
+      "why": "questions on the policy's interpretation go to the finance policy office"
+    },
+    {
+      "lines": [
+        67,
+        68
+      ],
+      "sha256": "b6622906684f93a2dff94c89ba08383ad6b9bf2b128f62ae5e9022d7e1626cfa",
+      "quote": "Exceptions to this policy require approval of the Chief Operating Officer and the Chief Financial Officer.",
+      "why": "exceptions to the policy need the COO's and the CFO's approval"
+    },
+    {
+      "lines": [
+        383,
+        384
+      ],
+      "sha256": "6f192f953c11892928423539b3a991a071b90bf409064fa7dfa3c8a706c874b1",
+      "quote": "Travelers are responsible for ensuring that they have the necessary approval from their supervisor to take a trip prior to committing VUMC funds or incurring expenses.",
+      "why": "the supervisor's approval of the trip before committing funds"
+    }
+  ],
+  "distractors": [],
+  "design_notes": "No flight is over four hours (line 104). Each journey's flights total under seven hours in the air (Delta 345 out, 330 back; United 355 and 335), but the round-trip ticket's four flights together total 675 or 690. 'The total scheduled in-air flight time for all flight segments' (line 105) may mean every flight of the ticket (business qualifies: Delta $1,880) or the flights of one journey (economy: Delta $462). Hold either."
+}

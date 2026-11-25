@@ -1,0 +1,180 @@
+{
+  "id": "gorse-inlet",
+  "category": "boundary_twin",
+  "overlays": [
+    "multi_leg"
+  ],
+  "twin_of": "fern-gable",
+  "twin_fact": "the nonstop's scheduled minutes, 240 or 241",
+  "flag_twins": [],
+  "ambiguity_note": "none",
+  "request": "Dallas to San Francisco on February 17th for the clinic site visit the next morning. My VP, Dr. Ruiz, approved business class as long as the trip qualifies under the policy. Business if it qualifies; otherwise economy is fine.",
+  "trip": {
+    "traveller_name": "Jorge Castillo",
+    "traveller_title": "Director of Clinic Operations",
+    "passenger": "EMPLOYEE",
+    "accompanies": "",
+    "origin": "DFW",
+    "destination": "SFO",
+    "travel_date": "2027-02-17",
+    "return_date": "",
+    "booking_date": "2027-01-20",
+    "must_arrive_by": "",
+    "purpose": "Site visit at a partner clinic",
+    "purpose_kind": "SITE_VISIT",
+    "funding": "DEPARTMENT_FUNDS",
+    "sponsor": "",
+    "sponsor_terms": [],
+    "requested_cabin": "BUSINESS",
+    "preferred_airline": "",
+    "self_paid_upgrade": "NONE",
+    "outside_option": "NONE",
+    "outside_option_detail": "",
+    "sign_offs": [
+      {
+        "role": "SUPERVISOR",
+        "name": "Elena Ruiz",
+        "title": "Vice President, Ambulatory Operations",
+        "subject": "TRIP",
+        "subject_to_policy": false,
+        "terms": "Approved the trip: clinic site visit, San Francisco."
+      },
+      {
+        "role": "OFFICER",
+        "name": "Dr. Elena Ruiz",
+        "title": "Vice President, Ambulatory Operations",
+        "subject": "PREMIUM_CABIN",
+        "subject_to_policy": true,
+        "terms": "Approved business class for this trip, provided the trip meets the travel policy's requirements for it."
+      }
+    ],
+    "travelling_with": [],
+    "notes": [
+      "From San Francisco the traveller drives on to the Sacramento clinic and flies home on a separate trip next month."
+    ]
+  },
+  "world": {
+    "searches": [
+      {
+        "name": "main",
+        "origin": "DFW",
+        "destination": "SFO",
+        "date": "2027-02-17",
+        "return_date": "",
+        "background": 0,
+        "flights": {
+          "nonstop": {
+            "carrier": "AA",
+            "depart": "09:10",
+            "minutes": [
+              240
+            ]
+          },
+          "denver": {
+            "carrier": "UA",
+            "depart": "07:30",
+            "via": [
+              "DEN"
+            ],
+            "minutes": [
+              125,
+              150
+            ],
+            "layovers": [
+              70
+            ]
+          }
+        },
+        "offers": [
+          {
+            "slot": "nonstop-economy",
+            "flight": "nonstop",
+            "cabin": "ECONOMY",
+            "fare_cents": 26800
+          },
+          {
+            "slot": "nonstop-business",
+            "flight": "nonstop",
+            "cabin": "BUSINESS",
+            "fare_cents": 119000
+          },
+          {
+            "slot": "denver-economy",
+            "flight": "denver",
+            "cabin": "ECONOMY",
+            "fare_cents": 24100
+          },
+          {
+            "slot": "denver-business",
+            "flight": "denver",
+            "cabin": "BUSINESS",
+            "fare_cents": 90500
+          }
+        ]
+      }
+    ]
+  },
+  "expected": {
+    "decision": "BOOK",
+    "offer_slots": [
+      "denver-economy"
+    ],
+    "cabins": [
+      "ECONOMY"
+    ],
+    "reason_codes": [
+      "LONG_FLIGHT_CONDITION_NOT_MET",
+      "UPGRADE_NOT_ELIGIBLE"
+    ],
+    "approvers": [
+      "NONE",
+      "SUPERVISOR",
+      "OFFICER"
+    ],
+    "clauses": [
+      "AIR_TRAVEL",
+      "FARES_AND_CLASS"
+    ],
+    "unclear_phrase": ""
+  },
+  "must_keep": [
+    {
+      "lines": [
+        102,
+        108
+      ],
+      "sha256": "10cb564445281b5d271d10aa332464187b2004d391f6bab1d50eb901fa945b92",
+      "quote": "Business class or first-class seating may be used only if the traveler's applicable officer approves it in writing in advance. One of the following conditions should be met:  Any flight segment has a scheduled in-air flying time more than four hours; or  The total scheduled in-air flight time for all flight segments is more than seven hours; or  A medical justification has been documented and approved by the Equal Opportunity, Affirmative Action, and Disability Services Department (EAD).",
+      "why": "business or first only with the officer's written approval in advance, and a condition"
+    },
+    {
+      "lines": [
+        88,
+        89
+      ],
+      "sha256": "4ec0fc83a1ab19fb8171906d159bebea56972fc26c84c78742c69a5b0b72d5ef",
+      "quote": "Travelers should purchase the lowest available economy class airfare that meets the business needs of the travel, except as outlined below.",
+      "why": "the lowest economy fare that meets the business needs"
+    },
+    {
+      "lines": [
+        383,
+        384
+      ],
+      "sha256": "6f192f953c11892928423539b3a991a071b90bf409064fa7dfa3c8a706c874b1",
+      "quote": "Travelers are responsible for ensuring that they have the necessary approval from their supervisor to take a trip prior to committing VUMC funds or incurring expenses.",
+      "why": "the supervisor's approval of the trip before committing funds"
+    }
+  ],
+  "distractors": [
+    {
+      "lines": [
+        467,
+        468
+      ],
+      "quote": "laundry and/or dry-cleaning charges will be reimbursed when travel exceeds four or more consecutive nights",
+      "why": "a count of nights for laundry, not of hours for a seat"
+    }
+  ],
+  "design_notes": "Lines 104-106: the nonstop is scheduled at exactly 240 minutes, which is not more than four hours; no flight of any offer is over four hours, none totals over seven hours and no medical justification is on file. The officer approved only if the trip qualifies, so economy: the lowest economy fare is United via Denver ($241)."
+}

@@ -1,0 +1,171 @@
+{
+  "id": "sable-wren",
+  "category": "distractor",
+  "overlays": [
+    "multi_leg"
+  ],
+  "twin_of": "",
+  "twin_fact": "",
+  "flag_twins": [],
+  "ambiguity_note": "none",
+  "request": "Boston to San Francisco on February 22nd for the cardiology summit. It's a long flight, so business please. My VP declined to sign for business this time, but surely a flight that long qualifies anyway? If it doesn't, economy is fine; the summit starts the next morning.",
+  "trip": {
+    "traveller_name": "Natalie Brooks",
+    "traveller_title": "Cardiology Nurse Practitioner",
+    "passenger": "EMPLOYEE",
+    "accompanies": "",
+    "origin": "BOS",
+    "destination": "SFO",
+    "travel_date": "2027-02-22",
+    "return_date": "",
+    "booking_date": "2027-01-25",
+    "must_arrive_by": "",
+    "purpose": "National cardiology summit",
+    "purpose_kind": "CONFERENCE",
+    "funding": "DEPARTMENT_FUNDS",
+    "sponsor": "",
+    "sponsor_terms": [],
+    "requested_cabin": "BUSINESS",
+    "preferred_airline": "",
+    "self_paid_upgrade": "NONE",
+    "outside_option": "NONE",
+    "outside_option_detail": "",
+    "sign_offs": [
+      {
+        "role": "SUPERVISOR",
+        "name": "Greg Patel",
+        "title": "Nurse Manager, Cardiology",
+        "subject": "TRIP",
+        "subject_to_policy": false,
+        "terms": "Approved the trip: cardiology summit, San Francisco."
+      }
+    ],
+    "travelling_with": [],
+    "notes": [
+      "The traveller's officer, Dr. Joan Whitaker, declined in writing to approve business class for this trip."
+    ]
+  },
+  "world": {
+    "searches": [
+      {
+        "name": "main",
+        "origin": "BOS",
+        "destination": "SFO",
+        "date": "2027-02-22",
+        "return_date": "",
+        "background": 0,
+        "flights": {
+          "nonstop": {
+            "carrier": "UA",
+            "depart": "08:00",
+            "minutes": [
+              385
+            ]
+          },
+          "chicago": {
+            "carrier": "AA",
+            "depart": "07:15",
+            "via": [
+              "ORD"
+            ],
+            "minutes": [
+              150,
+              270
+            ],
+            "layovers": [
+              70
+            ]
+          }
+        },
+        "offers": [
+          {
+            "slot": "nonstop-economy",
+            "flight": "nonstop",
+            "cabin": "ECONOMY",
+            "fare_cents": 32900
+          },
+          {
+            "slot": "nonstop-business",
+            "flight": "nonstop",
+            "cabin": "BUSINESS",
+            "fare_cents": 145000
+          },
+          {
+            "slot": "chicago-economy",
+            "flight": "chicago",
+            "cabin": "ECONOMY",
+            "fare_cents": 30100
+          },
+          {
+            "slot": "chicago-business",
+            "flight": "chicago",
+            "cabin": "BUSINESS",
+            "fare_cents": 121000
+          }
+        ]
+      }
+    ]
+  },
+  "expected": {
+    "decision": "BOOK",
+    "offer_slots": [
+      "chicago-economy"
+    ],
+    "cabins": [
+      "ECONOMY"
+    ],
+    "reason_codes": [
+      "UPGRADE_NOT_ELIGIBLE"
+    ],
+    "approvers": [
+      "NONE",
+      "SUPERVISOR",
+      "OFFICER"
+    ],
+    "clauses": [
+      "AIR_TRAVEL",
+      "FARES_AND_CLASS"
+    ],
+    "unclear_phrase": ""
+  },
+  "must_keep": [
+    {
+      "lines": [
+        102,
+        103
+      ],
+      "sha256": "4b25a5132575370cba2adcc8804d0e32d63bc3366e2c93b0b9d70778f0c42837",
+      "quote": "Business class or first-class seating may be used only if the traveler's applicable officer approves it in writing in advance.",
+      "why": "no business seat without the officer's approval"
+    },
+    {
+      "lines": [
+        88,
+        89
+      ],
+      "sha256": "4ec0fc83a1ab19fb8171906d159bebea56972fc26c84c78742c69a5b0b72d5ef",
+      "quote": "Travelers should purchase the lowest available economy class airfare that meets the business needs of the travel, except as outlined below.",
+      "why": "the lowest economy fare that meets the business needs"
+    },
+    {
+      "lines": [
+        383,
+        384
+      ],
+      "sha256": "6f192f953c11892928423539b3a991a071b90bf409064fa7dfa3c8a706c874b1",
+      "quote": "Travelers are responsible for ensuring that they have the necessary approval from their supervisor to take a trip prior to committing VUMC funds or incurring expenses.",
+      "why": "the supervisor's approval of the trip before committing funds"
+    }
+  ],
+  "distractors": [
+    {
+      "lines": [
+        104,
+        106
+      ],
+      "quote": "Any flight segment has a scheduled in-air flying time more than four hours",
+      "why": "a condition is met, but the officer's approval is still needed"
+    }
+  ],
+  "design_notes": "Lines 102-103: business may be used only if the applicable officer approves it in writing in advance; the officer declined. The flight-length condition (line 104) is met, but it is a condition beside the approval, not instead of it. Economy: American via Chicago ($301)."
+}

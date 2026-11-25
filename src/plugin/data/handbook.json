@@ -1,0 +1,16 @@
+{
+  "id": "vumc-flight-policy",
+  "name": "VUMC Flight Policy",
+  "slug": "vumc",
+  "title": "Vanderbilt University Medical Center Finance Policy FIN 4.7, Travel (effective June 2021)",
+  "frozen_file": "vumc_policy.txt",
+  "sha256": "5dcea9bd2e3053c0190b43af16212baf9f03c23c39c8c3b99cd3bd1b8fe6f449",
+  "raw_pdf_sha256": "2f2ab043ebca74b89505e6b177d2d8ef15a303e2bf875fba8f5759b630338ee8",
+  "words": 5837,
+  "lines": 809,
+  "source": "not recorded locally (UNVERIFIED); the raw PDF (pilot_work/originals/vumc/raw_vumc.pdf) is the pinned copy",
+  "frozen_on": "2026-11-24",
+  "scenario_count": 24,
+  "currency": "USD",
+  "background_offers": 0
+}

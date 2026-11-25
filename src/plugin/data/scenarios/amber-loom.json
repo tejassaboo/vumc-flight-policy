@@ -1,0 +1,144 @@
+{
+  "id": "amber-loom",
+  "category": "easy",
+  "overlays": [],
+  "twin_of": "",
+  "twin_fact": "",
+  "flag_twins": [],
+  "ambiguity_note": "none",
+  "request": "Chicago to Boston on January 19th for the nursing informatics conference. Economy, the cheapest seat please.",
+  "trip": {
+    "traveller_name": "Rachel Moreno",
+    "traveller_title": "Nurse Informaticist (works remotely from the Chicago area)",
+    "passenger": "EMPLOYEE",
+    "accompanies": "",
+    "origin": "ORD",
+    "destination": "BOS",
+    "travel_date": "2027-01-19",
+    "return_date": "",
+    "booking_date": "2026-12-14",
+    "must_arrive_by": "",
+    "purpose": "Present a poster at a nursing informatics conference",
+    "purpose_kind": "CONFERENCE",
+    "funding": "DEPARTMENT_FUNDS",
+    "sponsor": "",
+    "sponsor_terms": [],
+    "requested_cabin": "ECONOMY",
+    "preferred_airline": "",
+    "self_paid_upgrade": "NONE",
+    "outside_option": "NONE",
+    "outside_option_detail": "",
+    "sign_offs": [
+      {
+        "role": "SUPERVISOR",
+        "name": "Gwen Albright",
+        "title": "Director, Nursing Informatics",
+        "subject": "TRIP",
+        "subject_to_policy": false,
+        "terms": "Approved the trip: nursing informatics conference, Boston."
+      }
+    ],
+    "travelling_with": [],
+    "notes": []
+  },
+  "world": {
+    "searches": [
+      {
+        "name": "main",
+        "origin": "ORD",
+        "destination": "BOS",
+        "date": "2027-01-19",
+        "return_date": "",
+        "background": 2,
+        "flights": {
+          "dawn": {
+            "carrier": "UA",
+            "depart": "06:00"
+          },
+          "morning": {
+            "carrier": "AA",
+            "depart": "08:15"
+          },
+          "midday": {
+            "carrier": "DL",
+            "depart": "11:40"
+          },
+          "afternoon": {
+            "carrier": "B6",
+            "depart": "15:30"
+          }
+        },
+        "offers": [
+          {
+            "slot": "dawn-economy",
+            "flight": "dawn",
+            "cabin": "ECONOMY",
+            "fare_cents": 16400,
+            "seats": false
+          },
+          {
+            "slot": "morning-economy",
+            "flight": "morning",
+            "cabin": "ECONOMY",
+            "fare_cents": 18900
+          },
+          {
+            "slot": "midday-economy",
+            "flight": "midday",
+            "cabin": "ECONOMY",
+            "fare_cents": 20300
+          },
+          {
+            "slot": "afternoon-economy",
+            "flight": "afternoon",
+            "cabin": "ECONOMY",
+            "fare_cents": 21400
+          }
+        ]
+      }
+    ]
+  },
+  "expected": {
+    "decision": "BOOK",
+    "offer_slots": [
+      "morning-economy"
+    ],
+    "cabins": [
+      "ECONOMY"
+    ],
+    "reason_codes": [
+      "LOWEST_FARE"
+    ],
+    "approvers": [
+      "NONE",
+      "SUPERVISOR"
+    ],
+    "clauses": [
+      "AIR_TRAVEL",
+      "FARES_AND_CLASS"
+    ],
+    "unclear_phrase": ""
+  },
+  "must_keep": [
+    {
+      "lines": [
+        88,
+        89
+      ],
+      "sha256": "4ec0fc83a1ab19fb8171906d159bebea56972fc26c84c78742c69a5b0b72d5ef",
+      "quote": "Travelers should purchase the lowest available economy class airfare that meets the business needs of the travel, except as outlined below.",
+      "why": "the lowest economy fare that meets the business needs"
+    },
+    {
+      "lines": [
+        383,
+        384
+      ],
+      "sha256": "6f192f953c11892928423539b3a991a071b90bf409064fa7dfa3c8a706c874b1",
+      "quote": "Travelers are responsible for ensuring that they have the necessary approval from their supervisor to take a trip prior to committing VUMC funds or incurring expenses.",
+      "why": "the supervisor's approval of the trip before committing funds"
+    }
+  ],
+  "distractors": [],
+  "design_notes": "Line 88: the lowest available economy fare. The 06:00 United fare is sold out, so American at 08:15 ($189). The supervisor's approval of the trip (lines 383-384) is on file."
+}

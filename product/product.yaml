@@ -1,0 +1,13 @@
+_ > nanoagent.plugin.v0001.ProductConfig:
+tagline: "One flight request, a medical center's real travel policy: book it, refuse it, or hold it for sign-off"
+summary: "An agent handles one traveller's flight request under Vanderbilt University Medical Center's Finance Policy FIN 4.7, Travel (June 2021), read verbatim, page headers and all. It reads the trip record, searches a simulated flight world (real airports and airlines, synthetic schedules and fares) and submits a decision with the offer, cabin, reason, approver and policy section. A deterministic verifier rebuilds the offers and the policy's answer itself and checks every field. Twenty-four cases cover the officer's approval for business class with its flight-time conditions on both sides of each limit, Fly America and Open Skies on federal awards, a sponsor's stricter terms, exceptions signed by the COO and CFO, private planes, the booking-tool rule for international air, companions and personal side trips, and the policy's own unclear words."
+highlights:
+  - "The verbatim policy: no paraphrase, no rules restated in the task"
+  - "Exact boundaries: 240 against 241 scheduled minutes on one flight, 420 against 421 in the air in all"
+  - "Unclear clauses become holds for approval, each once, with clear twins on both sides"
+  - "Fully offline: a hash-seeded flight world with unguessable offer ids"
+steps:
+  - "Name a case, for example amber-loom, with the traveller's request"
+  - "The agent reads the trip record and searches flights on the trip's route and date"
+  - "It submits BOOK, REFUSE or FLAG_FOR_APPROVAL with the offer, cabin, reason, approver and section"
+  - "The verifier recomputes the policy's answer and checks every field"

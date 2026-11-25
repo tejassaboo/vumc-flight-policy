@@ -1,0 +1,57 @@
+_ > nanoagent.plugin.v0001.ManifestConfig:
+id: vumc-flight-policy
+name: VUMC Flight Policy
+version: 0.1.0
+status: in-development
+spec: nanoagent.plugin/v0001
+
+runtime > nanoagent.plugin.v0001.RuntimeConfig:
+  type: mcp_stdio
+  command: [uv, run, --frozen, python, -m, plugin]
+
+permissions > nanoagent.plugin.v0001.PermissionsConfig:
+  network > nanoagent.plugin.v0001.NetworkConfig:
+    hosts: []
+  filesystem > nanoagent.plugin.v0001.FilesystemConfig:
+    write: []
+
+# One entry per contract.Tool; its input and output classes are contract.TOOLS's.
+tools > dict[contract.Tool, nanoagent.plugin.v0001.ToolConfig]:
+  booking_requirements:
+    description: Show the trip record's fields with their meanings, the conventions of the simulated flight world (local times, dates, fares, sold-out seats) and the airports it knows
+  get_trip:
+    description: Read a booking request's trip record, by case id - who flies, where and when, why, what pays for the trip, what they ask for, sign-offs on file, colleagues flying along and other notes
+  search_flights:
+    description: List every one-way offer on a route that leaves on one local date - airline, cabin, fare in cents, whether seats are left, each flight's local and UTC times and scheduled minutes, layovers (simulated schedules and fares)
+  solve_booking:
+    description: The answer key, never given to the agent - the decision the medical center's travel policy requires for a booking request, with every accepted offer, cabin, reason, approver and section
+
+# One entry per contract.Task; its input and output classes are contract.TASKS's.
+tasks > dict[contract.Task, nanoagent.plugin.v0001.TaskConfig]:
+  booking-requirements:
+    description: Show the trip record's fields, the flight world's conventions and its airports
+    runner: tool
+    tools: [booking_requirements]
+    reference: null
+    instructions: Call booking_requirements with topic ALL (FIELDS for only the fields and conventions, AIRPORTS for only the airport list) and show what it returns.
+  search-flights:
+    description: Show the one-way flight offers on a route and local date for a booking request's case
+    runner: tool
+    tools: [search_flights]
+    reference: null
+    instructions: Call search_flights with the case id, the airport codes to leave from and fly to and the local date to leave, and show the offers it returns.
+  book-vumc-flight:
+    description: Handle one traveller's flight booking request for an academic medical center
+    runner: agent
+    tools: [get_trip, search_flights]
+    reference: solve_booking
+    instructions: |-
+      Handle the traveller's flight booking request in the task input, as the medical center's travel policy allows.
+
+      Call get_trip with the task input's case id to read the trip record, then call search_flights for the trip's origin, destination and travel date (with its return_date when the record gives one). Then call submit with your single decision:
+      - BOOK when the medical center buys a ticket now, with the offer_id of the offer to buy and its cabin;
+      - REFUSE when the organisation buys no ticket at all for this request, with an empty offer_id and cabin NONE;
+      - FLAG_FOR_APPROVAL when the ticket must wait, either for someone's sign-off or because the policy's words leave the answer open, with the offer_id of the offer to hold and its cabin.
+      Give a reason_code, the approver role and the policy section (clause) from their closed lists; use NONE where nothing applies.
+      The case buys one ticket: the one-way fare out, unless the trip record gives a return date for a round-trip ticket, which is then one round-trip fare; otherwise the trip's return is booked separately and is not part of this decision. Times are shown local at each airport and in UTC (no daylight saving), a flight's date is the local date where it leaves, and days between two dates are calendar days.
+      When you book something other than what the traveller asked for, the reason code gives why their request is declined.

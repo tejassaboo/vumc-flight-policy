@@ -1,0 +1,178 @@
+{
+  "id": "iris-nook",
+  "category": "boundary_twin",
+  "overlays": [
+    "multi_leg"
+  ],
+  "twin_of": "hazel-marsh",
+  "twin_fact": "the second flight's scheduled minutes, 205 or 206 (420 or 421 in the air)",
+  "flag_twins": [],
+  "ambiguity_note": "none",
+  "request": "LaGuardia to Los Angeles on March 15th; my research rotation at the partner hospital starts the next morning. Dr. Chen approved business class in writing if the itinerary qualifies under the policy. Business if it qualifies, otherwise economy is fine.",
+  "trip": {
+    "traveller_name": "Priya Natarajan",
+    "traveller_title": "Research Fellow, Health Policy",
+    "passenger": "EMPLOYEE",
+    "accompanies": "",
+    "origin": "LGA",
+    "destination": "LAX",
+    "travel_date": "2027-03-15",
+    "return_date": "",
+    "booking_date": "2027-02-15",
+    "must_arrive_by": "",
+    "purpose": "Start a three-month research rotation at a partner hospital",
+    "purpose_kind": "RESEARCH_MEETING",
+    "funding": "DEPARTMENT_FUNDS",
+    "sponsor": "",
+    "sponsor_terms": [],
+    "requested_cabin": "BUSINESS",
+    "preferred_airline": "",
+    "self_paid_upgrade": "NONE",
+    "outside_option": "NONE",
+    "outside_option_detail": "",
+    "sign_offs": [
+      {
+        "role": "SUPERVISOR",
+        "name": "Thomas Reed",
+        "title": "Director, Health Policy Fellowship",
+        "subject": "TRIP",
+        "subject_to_policy": false,
+        "terms": "Approved the trip: research rotation, Los Angeles."
+      },
+      {
+        "role": "OFFICER",
+        "name": "Dr. Wei Chen",
+        "title": "Executive Vice President for Research",
+        "subject": "PREMIUM_CABIN",
+        "subject_to_policy": true,
+        "terms": "Approved business class for this trip, provided the trip meets the travel policy's requirements for it."
+      }
+    ],
+    "travelling_with": [],
+    "notes": [
+      "One-way: the traveller stays in Los Angeles for the rotation; the trip home is a separate trip."
+    ]
+  },
+  "world": {
+    "searches": [
+      {
+        "name": "main",
+        "origin": "LGA",
+        "destination": "LAX",
+        "date": "2027-03-15",
+        "return_date": "",
+        "background": 0,
+        "flights": {
+          "early": {
+            "carrier": "AA",
+            "depart": "06:00",
+            "via": [
+              "DFW"
+            ],
+            "minutes": [
+              215,
+              205
+            ],
+            "layovers": [
+              85
+            ]
+          },
+          "late": {
+            "carrier": "AA",
+            "depart": "11:30",
+            "via": [
+              "DFW"
+            ],
+            "minutes": [
+              215,
+              205
+            ],
+            "layovers": [
+              95
+            ]
+          }
+        },
+        "offers": [
+          {
+            "slot": "early-economy",
+            "flight": "early",
+            "cabin": "ECONOMY",
+            "fare_cents": 41200
+          },
+          {
+            "slot": "early-business",
+            "flight": "early",
+            "cabin": "BUSINESS",
+            "fare_cents": 156000
+          },
+          {
+            "slot": "late-economy",
+            "flight": "late",
+            "cabin": "ECONOMY",
+            "fare_cents": 39800
+          },
+          {
+            "slot": "late-business",
+            "flight": "late",
+            "cabin": "BUSINESS",
+            "fare_cents": 161000
+          }
+        ]
+      }
+    ]
+  },
+  "expected": {
+    "decision": "BOOK",
+    "offer_slots": [
+      "late-economy"
+    ],
+    "cabins": [
+      "ECONOMY"
+    ],
+    "reason_codes": [
+      "LONG_FLIGHT_CONDITION_NOT_MET",
+      "UPGRADE_NOT_ELIGIBLE"
+    ],
+    "approvers": [
+      "NONE",
+      "SUPERVISOR",
+      "OFFICER"
+    ],
+    "clauses": [
+      "AIR_TRAVEL",
+      "FARES_AND_CLASS"
+    ],
+    "unclear_phrase": ""
+  },
+  "must_keep": [
+    {
+      "lines": [
+        102,
+        108
+      ],
+      "sha256": "10cb564445281b5d271d10aa332464187b2004d391f6bab1d50eb901fa945b92",
+      "quote": "Business class or first-class seating may be used only if the traveler's applicable officer approves it in writing in advance. One of the following conditions should be met:  Any flight segment has a scheduled in-air flying time more than four hours; or  The total scheduled in-air flight time for all flight segments is more than seven hours; or  A medical justification has been documented and approved by the Equal Opportunity, Affirmative Action, and Disability Services Department (EAD).",
+      "why": "business or first only with the officer's written approval in advance, and a condition"
+    },
+    {
+      "lines": [
+        88,
+        89
+      ],
+      "sha256": "4ec0fc83a1ab19fb8171906d159bebea56972fc26c84c78742c69a5b0b72d5ef",
+      "quote": "Travelers should purchase the lowest available economy class airfare that meets the business needs of the travel, except as outlined below.",
+      "why": "the lowest economy fare that meets the business needs"
+    },
+    {
+      "lines": [
+        383,
+        384
+      ],
+      "sha256": "6f192f953c11892928423539b3a991a071b90bf409064fa7dfa3c8a706c874b1",
+      "quote": "Travelers are responsible for ensuring that they have the necessary approval from their supervisor to take a trip prior to committing VUMC funds or incurring expenses.",
+      "why": "the supervisor's approval of the trip before committing funds"
+    }
+  ],
+  "distractors": [],
+  "design_notes": "Lines 105-106: the flights total 420 minutes in the air, which is not more than seven hours (the 85-95 minute connections make the elapsed time longer, but in-air time leaves them out); no flight is over four hours and no medical justification is on file. Economy: the 11:30 ($398)."
+}

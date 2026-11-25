@@ -1,0 +1,177 @@
+{
+  "id": "cedar-quill",
+  "category": "easy",
+  "overlays": [
+    "multi_traveller",
+    "upgrade_not_taken",
+    "synonym"
+  ],
+  "twin_of": "",
+  "twin_fact": "",
+  "flag_twins": [],
+  "ambiguity_note": "none",
+  "request": "I'm going to the sepsis trial investigators' meeting in Seattle with Dr. Okafor on March 2nd. She's in business on her Delta flight. Please book me economy on that same flight; I'll use my own SkyMiles to upgrade so we can work on the slides together.",
+  "trip": {
+    "traveller_name": "Lucas Brennan",
+    "traveller_title": "Clinical Research Coordinator",
+    "passenger": "EMPLOYEE",
+    "accompanies": "",
+    "origin": "ATL",
+    "destination": "SEA",
+    "travel_date": "2027-03-02",
+    "return_date": "",
+    "booking_date": "2027-02-01",
+    "must_arrive_by": "",
+    "purpose": "Sepsis trial investigators' meeting",
+    "purpose_kind": "RESEARCH_MEETING",
+    "funding": "DEPARTMENT_FUNDS",
+    "sponsor": "",
+    "sponsor_terms": [],
+    "requested_cabin": "ECONOMY",
+    "preferred_airline": "",
+    "self_paid_upgrade": "BUSINESS",
+    "outside_option": "NONE",
+    "outside_option_detail": "",
+    "sign_offs": [
+      {
+        "role": "SUPERVISOR",
+        "name": "Paula Greer",
+        "title": "Research Program Manager",
+        "subject": "TRIP",
+        "subject_to_policy": false,
+        "terms": "Approved the trip: sepsis trial investigators' meeting, Seattle."
+      }
+    ],
+    "travelling_with": [
+      {
+        "name": "Dr. Ngozi Okafor",
+        "title": "Professor of Emergency Medicine",
+        "flight_number": "DL 2749",
+        "date": "2027-03-02",
+        "cabin": "BUSINESS"
+      }
+    ],
+    "notes": []
+  },
+  "world": {
+    "searches": [
+      {
+        "name": "main",
+        "origin": "ATL",
+        "destination": "SEA",
+        "date": "2027-03-02",
+        "return_date": "",
+        "background": 0,
+        "flights": {
+          "delta": {
+            "carrier": "DL",
+            "depart": "08:05",
+            "minutes": [
+              330
+            ]
+          },
+          "alaska": {
+            "carrier": "AS",
+            "depart": "10:20",
+            "minutes": [
+              335
+            ]
+          },
+          "united": {
+            "carrier": "UA",
+            "depart": "07:15",
+            "via": [
+              "DEN"
+            ],
+            "minutes": [
+              195,
+              150
+            ],
+            "layovers": [
+              75
+            ]
+          }
+        },
+        "offers": [
+          {
+            "slot": "delta-economy",
+            "flight": "delta",
+            "cabin": "ECONOMY",
+            "fare_cents": 31200
+          },
+          {
+            "slot": "delta-business",
+            "flight": "delta",
+            "cabin": "BUSINESS",
+            "fare_cents": 148000
+          },
+          {
+            "slot": "alaska-economy",
+            "flight": "alaska",
+            "cabin": "ECONOMY",
+            "fare_cents": 33800
+          },
+          {
+            "slot": "united-economy",
+            "flight": "united",
+            "cabin": "ECONOMY",
+            "fare_cents": 34900
+          }
+        ]
+      }
+    ]
+  },
+  "expected": {
+    "decision": "BOOK",
+    "offer_slots": [
+      "delta-economy"
+    ],
+    "cabins": [
+      "ECONOMY"
+    ],
+    "reason_codes": [
+      "LOWEST_FARE",
+      "TRAVELER_PAYS_UPGRADE"
+    ],
+    "approvers": [
+      "NONE",
+      "SUPERVISOR"
+    ],
+    "clauses": [
+      "AIR_TRAVEL",
+      "FARES_AND_CLASS"
+    ],
+    "unclear_phrase": ""
+  },
+  "must_keep": [
+    {
+      "lines": [
+        88,
+        89
+      ],
+      "sha256": "4ec0fc83a1ab19fb8171906d159bebea56972fc26c84c78742c69a5b0b72d5ef",
+      "quote": "Travelers should purchase the lowest available economy class airfare that meets the business needs of the travel, except as outlined below.",
+      "why": "the lowest economy fare that meets the business needs"
+    },
+    {
+      "lines": [
+        89,
+        91
+      ],
+      "sha256": "22e9d64125de9958026ed660e409cc5aba555d537ce136332c279eb4416be7ea",
+      "quote": "Travelers may upgrade the level of service at personal expense or by using their personal airline rewards points/miles/credits.",
+      "why": "upgrades at the traveller's own expense or points"
+    },
+    {
+      "lines": [
+        383,
+        384
+      ],
+      "sha256": "6f192f953c11892928423539b3a991a071b90bf409064fa7dfa3c8a706c874b1",
+      "quote": "Travelers are responsible for ensuring that they have the necessary approval from their supervisor to take a trip prior to committing VUMC funds or incurring expenses.",
+      "why": "the supervisor's approval of the trip before committing funds"
+    }
+  ],
+  "distractors": [],
+  "design_notes": "Lines 88-91: VUMC buys the lowest economy fare, and the traveller may upgrade at personal expense or with personal airline points. Delta's economy on Dr. Okafor's flight ($312) is also the lowest economy fare. The traveller has no officer approval of his own, so VUMC does not buy business for him."
+}

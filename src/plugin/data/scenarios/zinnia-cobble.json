@@ -1,0 +1,134 @@
+{
+  "id": "zinnia-cobble",
+  "category": "flag",
+  "overlays": [
+    "approval_required",
+    "outside_air_section"
+  ],
+  "twin_of": "",
+  "twin_fact": "",
+  "flag_twins": [
+    "amber-loom",
+    "umber-cask"
+  ],
+  "ambiguity_note": "none: an approval is required and missing; the text is clear",
+  "request": "Charlotte to Austin on February 17th for the coding compliance training. My supervisor hasn't approved the trip yet (she's back Thursday), but can you take care of the flight?",
+  "trip": {
+    "traveller_name": "Jasmine Wright",
+    "traveller_title": "Coding Compliance Analyst",
+    "passenger": "EMPLOYEE",
+    "accompanies": "",
+    "origin": "CLT",
+    "destination": "AUS",
+    "travel_date": "2027-02-17",
+    "return_date": "",
+    "booking_date": "2027-01-19",
+    "must_arrive_by": "",
+    "purpose": "Coding compliance training",
+    "purpose_kind": "TRAINING",
+    "funding": "DEPARTMENT_FUNDS",
+    "sponsor": "",
+    "sponsor_terms": [],
+    "requested_cabin": "ECONOMY",
+    "preferred_airline": "",
+    "self_paid_upgrade": "NONE",
+    "outside_option": "NONE",
+    "outside_option_detail": "",
+    "sign_offs": [],
+    "travelling_with": [],
+    "notes": [
+      "The traveller's supervisor, Angela Ruiz, Manager of Coding Compliance, has the trip request and has not approved it yet."
+    ]
+  },
+  "world": {
+    "searches": [
+      {
+        "name": "main",
+        "origin": "CLT",
+        "destination": "AUS",
+        "date": "2027-02-17",
+        "return_date": "",
+        "background": 0,
+        "flights": {
+          "american": {
+            "carrier": "AA",
+            "depart": "09:10"
+          },
+          "southwest": {
+            "carrier": "WN",
+            "depart": "12:40"
+          },
+          "denver": {
+            "carrier": "UA",
+            "depart": "07:20",
+            "via": [
+              "DEN"
+            ]
+          }
+        },
+        "offers": [
+          {
+            "slot": "american-economy",
+            "flight": "american",
+            "cabin": "ECONOMY",
+            "fare_cents": 23100
+          },
+          {
+            "slot": "southwest-economy",
+            "flight": "southwest",
+            "cabin": "ECONOMY",
+            "fare_cents": 24700
+          },
+          {
+            "slot": "denver-economy",
+            "flight": "denver",
+            "cabin": "ECONOMY",
+            "fare_cents": 21900
+          }
+        ]
+      }
+    ]
+  },
+  "expected": {
+    "decision": "FLAG_FOR_APPROVAL",
+    "offer_slots": [
+      "denver-economy"
+    ],
+    "cabins": [
+      "ECONOMY"
+    ],
+    "reason_codes": [
+      "APPROVAL_REQUIRED"
+    ],
+    "approvers": [
+      "SUPERVISOR"
+    ],
+    "clauses": [
+      "APPROVAL_TO_TRAVEL",
+      "OTHER_CONSIDERATIONS"
+    ],
+    "unclear_phrase": ""
+  },
+  "must_keep": [
+    {
+      "lines": [
+        383,
+        384
+      ],
+      "sha256": "6f192f953c11892928423539b3a991a071b90bf409064fa7dfa3c8a706c874b1",
+      "quote": "Travelers are responsible for ensuring that they have the necessary approval from their supervisor to take a trip prior to committing VUMC funds or incurring expenses.",
+      "why": "the supervisor's approval of the trip before committing funds"
+    },
+    {
+      "lines": [
+        88,
+        89
+      ],
+      "sha256": "4ec0fc83a1ab19fb8171906d159bebea56972fc26c84c78742c69a5b0b72d5ef",
+      "quote": "Travelers should purchase the lowest available economy class airfare that meets the business needs of the travel, except as outlined below.",
+      "why": "the lowest economy fare that meets the business needs"
+    }
+  ],
+  "distractors": [],
+  "design_notes": "Lines 383-384: travelers must have their supervisor's approval to take a trip prior to committing VUMC funds or incurring expenses; buying the ticket commits funds, and the approval is not yet given. Hold the lowest economy fare (United via Denver, $219) for the supervisor: approval required, not 'no compliant offer'."
+}

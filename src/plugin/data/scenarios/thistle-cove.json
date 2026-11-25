@@ -1,0 +1,180 @@
+{
+  "id": "thistle-cove",
+  "category": "multi_rule",
+  "overlays": [
+    "date_arithmetic",
+    "month_end",
+    "dearer_option",
+    "multi_leg",
+    "synonym"
+  ],
+  "twin_of": "",
+  "twin_fact": "",
+  "flag_twins": [],
+  "ambiguity_note": "none",
+  "request": "A donor has offered to fly me to New York on his company's jet for the 9 a.m. board meeting on February 1st. If I can't take it, book me a commercial economy flight from LAX on January 31st that gets me there in time.",
+  "trip": {
+    "traveller_name": "Margaret Ellison",
+    "traveller_title": "Vice President, Development",
+    "passenger": "EMPLOYEE",
+    "accompanies": "",
+    "origin": "LAX",
+    "destination": "JFK",
+    "travel_date": "2027-01-31",
+    "return_date": "",
+    "booking_date": "2027-01-12",
+    "must_arrive_by": "2027-02-01 09:00",
+    "purpose": "Board meeting of a donor foundation",
+    "purpose_kind": "BOARD_MEETING",
+    "funding": "DEPARTMENT_FUNDS",
+    "sponsor": "",
+    "sponsor_terms": [],
+    "requested_cabin": "ECONOMY",
+    "preferred_airline": "",
+    "self_paid_upgrade": "NONE",
+    "outside_option": "PRIVATE_AIRCRAFT",
+    "outside_option_detail": "A seat on a donor's corporate jet from Van Nuys to Teterboro on January 31st",
+    "sign_offs": [
+      {
+        "role": "SUPERVISOR",
+        "name": "Charles Abbott",
+        "title": "Chief Development Officer",
+        "subject": "TRIP",
+        "subject_to_policy": false,
+        "terms": "Approved the trip: donor foundation board meeting, New York."
+      }
+    ],
+    "travelling_with": [],
+    "notes": [
+      "No approval for flying on a non-airline plane is on file."
+    ]
+  },
+  "world": {
+    "searches": [
+      {
+        "name": "main",
+        "origin": "LAX",
+        "destination": "JFK",
+        "date": "2027-01-31",
+        "return_date": "",
+        "background": 0,
+        "flights": {
+          "morning": {
+            "carrier": "DL",
+            "depart": "07:00",
+            "minutes": [
+              325
+            ]
+          },
+          "afternoon": {
+            "carrier": "AA",
+            "depart": "13:15",
+            "minutes": [
+              320
+            ]
+          },
+          "redeye": {
+            "carrier": "B6",
+            "depart": "21:30",
+            "minutes": [
+              315
+            ]
+          },
+          "chicago": {
+            "carrier": "UA",
+            "depart": "22:10",
+            "via": [
+              "ORD"
+            ],
+            "minutes": [
+              240,
+              125
+            ],
+            "layovers": [
+              150
+            ]
+          }
+        },
+        "offers": [
+          {
+            "slot": "morning-economy",
+            "flight": "morning",
+            "cabin": "ECONOMY",
+            "fare_cents": 34200
+          },
+          {
+            "slot": "afternoon-economy",
+            "flight": "afternoon",
+            "cabin": "ECONOMY",
+            "fare_cents": 31800
+          },
+          {
+            "slot": "redeye-economy",
+            "flight": "redeye",
+            "cabin": "ECONOMY",
+            "fare_cents": 27600
+          },
+          {
+            "slot": "chicago-economy",
+            "flight": "chicago",
+            "cabin": "ECONOMY",
+            "fare_cents": 23100
+          }
+        ]
+      }
+    ]
+  },
+  "expected": {
+    "decision": "BOOK",
+    "offer_slots": [
+      "redeye-economy"
+    ],
+    "cabins": [
+      "ECONOMY"
+    ],
+    "reason_codes": [
+      "PRIVATE_AIRCRAFT_NOT_APPROVED"
+    ],
+    "approvers": [
+      "NONE",
+      "SUPERVISOR"
+    ],
+    "clauses": [
+      "AIR_TRAVEL",
+      "FARES_AND_CLASS",
+      "PRIVATE_AIRCRAFT"
+    ],
+    "unclear_phrase": ""
+  },
+  "must_keep": [
+    {
+      "lines": [
+        133,
+        138
+      ],
+      "sha256": "4be189ab1d3e22a639029cbfeca72d52f213023c5ca16283f5ddf56483d65fd2",
+      "quote": "1.6. Private Aircraft In general, VUMC faculty and staff members are prohibited from using non-commercial (private/corporate/state owned, rented, or borrowed) aircraft (fixed-wing or rotary) for VUMC business travel. Exceptions to this prohibition require written approval in advance of committing to the travel from both the Office of Risk and Insurance Management (https://www.vumc.org/risk-management/management) and the Chief Financial Officer.",
+      "why": "no non-commercial aircraft without Risk and Insurance Management and the CFO"
+    },
+    {
+      "lines": [
+        88,
+        89
+      ],
+      "sha256": "4ec0fc83a1ab19fb8171906d159bebea56972fc26c84c78742c69a5b0b72d5ef",
+      "quote": "Travelers should purchase the lowest available economy class airfare that meets the business needs of the travel, except as outlined below.",
+      "why": "the lowest economy fare that meets the business needs"
+    },
+    {
+      "lines": [
+        383,
+        384
+      ],
+      "sha256": "6f192f953c11892928423539b3a991a071b90bf409064fa7dfa3c8a706c874b1",
+      "quote": "Travelers are responsible for ensuring that they have the necessary approval from their supervisor to take a trip prior to committing VUMC funds or incurring expenses.",
+      "why": "the supervisor's approval of the trip before committing funds"
+    }
+  ],
+  "distractors": [],
+  "design_notes": "Lines 134-138: a corporate jet is non-commercial aircraft, prohibited without written approval from Risk and Insurance Management and the CFO, and none is on file. Line 88: the lowest economy fare that meets the business need. The United connection ($231) leaves January 31 and lands February 1 at 09:45, after 09:00; the JetBlue red-eye ($276) lands February 1 at 05:45."
+}

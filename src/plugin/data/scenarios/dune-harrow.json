@@ -1,0 +1,153 @@
+{
+  "id": "dune-harrow",
+  "category": "easy",
+  "overlays": [
+    "date_arithmetic",
+    "multi_leg",
+    "dearer_option"
+  ],
+  "twin_of": "",
+  "twin_fact": "",
+  "flag_twins": [],
+  "ambiguity_note": "none",
+  "request": "Seattle to Boston on the night of Monday, March 8th: I'm teaching the 10 a.m. simulation workshop at the Boston partner hospital on Tuesday the 9th. The cheapest economy flight that gets me there for it, please.",
+  "trip": {
+    "traveller_name": "Hannah Lindqvist",
+    "traveller_title": "Simulation Education Specialist",
+    "passenger": "EMPLOYEE",
+    "accompanies": "",
+    "origin": "SEA",
+    "destination": "BOS",
+    "travel_date": "2027-03-08",
+    "return_date": "",
+    "booking_date": "2027-02-08",
+    "must_arrive_by": "2027-03-09 10:00",
+    "purpose": "Teach a simulation workshop at a partner hospital",
+    "purpose_kind": "TRAINING",
+    "funding": "DEPARTMENT_FUNDS",
+    "sponsor": "",
+    "sponsor_terms": [],
+    "requested_cabin": "ECONOMY",
+    "preferred_airline": "",
+    "self_paid_upgrade": "NONE",
+    "outside_option": "NONE",
+    "outside_option_detail": "",
+    "sign_offs": [
+      {
+        "role": "SUPERVISOR",
+        "name": "Omar Haddad",
+        "title": "Manager, Center for Experiential Learning",
+        "subject": "TRIP",
+        "subject_to_policy": false,
+        "terms": "Approved the trip: simulation workshop, Boston."
+      }
+    ],
+    "travelling_with": [],
+    "notes": []
+  },
+  "world": {
+    "searches": [
+      {
+        "name": "main",
+        "origin": "SEA",
+        "destination": "BOS",
+        "date": "2027-03-08",
+        "return_date": "",
+        "background": 0,
+        "flights": {
+          "day": {
+            "carrier": "DL",
+            "depart": "08:00",
+            "minutes": [
+              320
+            ]
+          },
+          "chicago": {
+            "carrier": "UA",
+            "depart": "21:50",
+            "via": [
+              "ORD"
+            ],
+            "minutes": [
+              245,
+              135
+            ],
+            "layovers": [
+              200
+            ]
+          },
+          "redeye": {
+            "carrier": "AS",
+            "depart": "22:40",
+            "minutes": [
+              325
+            ]
+          }
+        },
+        "offers": [
+          {
+            "slot": "day-economy",
+            "flight": "day",
+            "cabin": "ECONOMY",
+            "fare_cents": 36500
+          },
+          {
+            "slot": "chicago-economy",
+            "flight": "chicago",
+            "cabin": "ECONOMY",
+            "fare_cents": 28900
+          },
+          {
+            "slot": "redeye-economy",
+            "flight": "redeye",
+            "cabin": "ECONOMY",
+            "fare_cents": 33800
+          }
+        ]
+      }
+    ]
+  },
+  "expected": {
+    "decision": "BOOK",
+    "offer_slots": [
+      "redeye-economy"
+    ],
+    "cabins": [
+      "ECONOMY"
+    ],
+    "reason_codes": [
+      "LOWEST_FARE"
+    ],
+    "approvers": [
+      "NONE",
+      "SUPERVISOR"
+    ],
+    "clauses": [
+      "AIR_TRAVEL",
+      "FARES_AND_CLASS"
+    ],
+    "unclear_phrase": ""
+  },
+  "must_keep": [
+    {
+      "lines": [
+        88,
+        89
+      ],
+      "sha256": "4ec0fc83a1ab19fb8171906d159bebea56972fc26c84c78742c69a5b0b72d5ef",
+      "quote": "Travelers should purchase the lowest available economy class airfare that meets the business needs of the travel, except as outlined below.",
+      "why": "the lowest economy fare that meets the business needs"
+    },
+    {
+      "lines": [
+        383,
+        384
+      ],
+      "sha256": "6f192f953c11892928423539b3a991a071b90bf409064fa7dfa3c8a706c874b1",
+      "quote": "Travelers are responsible for ensuring that they have the necessary approval from their supervisor to take a trip prior to committing VUMC funds or incurring expenses.",
+      "why": "the supervisor's approval of the trip before committing funds"
+    }
+  ],
+  "distractors": [],
+  "design_notes": "Line 88: the lowest economy fare that meets the business needs. The United connection ($289) leaves Monday night and lands Tuesday 10:30 in Boston, after the 10:00 the record gives; the Alaska red-eye ($338) lands Tuesday 07:05. The day flight costs more."
+}

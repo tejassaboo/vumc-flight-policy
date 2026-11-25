@@ -1,0 +1,170 @@
+{
+  "id": "rook-tallow",
+  "category": "hidden_clause",
+  "overlays": [
+    "synonym"
+  ],
+  "twin_of": "",
+  "twin_fact": "",
+  "flag_twins": [],
+  "ambiguity_note": "none",
+  "request": "JFK to Dublin on May 3rd for the genomics meeting, which starts the afternoon after I land. I found Aer Lingus for $612 on their own website, cheaper than what VUMC's booking tool shows, so I'll buy it there and expense it; saving money is a business need. If I can't, book what the policy allows.",
+  "trip": {
+    "traveller_name": "Owen Fitzgerald",
+    "traveller_title": "Genetic Counselor",
+    "passenger": "EMPLOYEE",
+    "accompanies": "",
+    "origin": "JFK",
+    "destination": "DUB",
+    "travel_date": "2027-05-03",
+    "return_date": "",
+    "booking_date": "2027-04-05",
+    "must_arrive_by": "",
+    "purpose": "International genomics consortium meeting",
+    "purpose_kind": "RESEARCH_MEETING",
+    "funding": "DEPARTMENT_FUNDS",
+    "sponsor": "",
+    "sponsor_terms": [],
+    "requested_cabin": "ECONOMY",
+    "preferred_airline": "",
+    "self_paid_upgrade": "NONE",
+    "outside_option": "AIRLINE_WEBSITE",
+    "outside_option_detail": "An Aer Lingus fare of $612 on the airline's own website, outside VUMC's booking tool and travel agency",
+    "sign_offs": [
+      {
+        "role": "SUPERVISOR",
+        "name": "Beatrice Long",
+        "title": "Director, Genetic Counseling",
+        "subject": "TRIP",
+        "subject_to_policy": false,
+        "terms": "Approved the trip: genomics meeting, Dublin."
+      },
+      {
+        "role": "EXPORT_COMPLIANCE",
+        "name": "VUMC Export Compliance",
+        "title": "Export Compliance Office",
+        "subject": "INTERNATIONAL_QUESTIONNAIRE",
+        "subject_to_policy": false,
+        "terms": "Approved the traveller's International Travel Questionnaire for this trip."
+      }
+    ],
+    "travelling_with": [],
+    "notes": [
+      "The fares search_flights lists are the ones VUMC's online booking tool and travel agency can book."
+    ]
+  },
+  "world": {
+    "searches": [
+      {
+        "name": "main",
+        "origin": "JFK",
+        "destination": "DUB",
+        "date": "2027-05-03",
+        "return_date": "",
+        "background": 0,
+        "flights": {
+          "aerlingus": {
+            "carrier": "EI",
+            "depart": "18:30",
+            "minutes": [
+              400
+            ]
+          },
+          "delta": {
+            "carrier": "DL",
+            "depart": "20:15",
+            "minutes": [
+              410
+            ]
+          }
+        },
+        "offers": [
+          {
+            "slot": "aerlingus-economy",
+            "flight": "aerlingus",
+            "cabin": "ECONOMY",
+            "fare_cents": 68800
+          },
+          {
+            "slot": "delta-economy",
+            "flight": "delta",
+            "cabin": "ECONOMY",
+            "fare_cents": 70500
+          }
+        ]
+      }
+    ]
+  },
+  "expected": {
+    "decision": "BOOK",
+    "offer_slots": [
+      "aerlingus-economy"
+    ],
+    "cabins": [
+      "ECONOMY"
+    ],
+    "reason_codes": [
+      "BOOKING_TOOL_REQUIRED"
+    ],
+    "approvers": [
+      "NONE",
+      "SUPERVISOR",
+      "EXPORT_COMPLIANCE"
+    ],
+    "clauses": [
+      "AIR_TRAVEL",
+      "FARES_AND_CLASS",
+      "AIR_RESERVATIONS"
+    ],
+    "unclear_phrase": ""
+  },
+  "must_keep": [
+    {
+      "lines": [
+        72,
+        77
+      ],
+      "sha256": "74916ae1143399adecab73fd920189774707b81a0522defce5c0ce6f1266bc70",
+      "quote": "All international air reservations must be made through the online booking tool or directly with the designated travel agency, except in documented extreme cases necessitated by business needs and/or to preserve personal safety*.",
+      "why": "international air only through the booking tool or the travel agency"
+    },
+    {
+      "lines": [
+        84,
+        85
+      ],
+      "sha256": "fa50e8ffcf4d0e258d0663372a96adfff049b152df3df8a275cdfc1829ce2865",
+      "quote": "*Cost is not defined as a business need.",
+      "why": "a saving is not a business need"
+    },
+    {
+      "lines": [
+        88,
+        89
+      ],
+      "sha256": "4ec0fc83a1ab19fb8171906d159bebea56972fc26c84c78742c69a5b0b72d5ef",
+      "quote": "Travelers should purchase the lowest available economy class airfare that meets the business needs of the travel, except as outlined below.",
+      "why": "the lowest economy fare that meets the business needs"
+    },
+    {
+      "lines": [
+        383,
+        384
+      ],
+      "sha256": "6f192f953c11892928423539b3a991a071b90bf409064fa7dfa3c8a706c874b1",
+      "quote": "Travelers are responsible for ensuring that they have the necessary approval from their supervisor to take a trip prior to committing VUMC funds or incurring expenses.",
+      "why": "the supervisor's approval of the trip before committing funds"
+    }
+  ],
+  "distractors": [
+    {
+      "lines": [
+        78,
+        83
+      ],
+      "quote": "Submission of approval of the Questionnaire is required with the filing of the traveler's expense report in Concur.",
+      "why": "the questionnaire is on file and matters at expense time"
+    }
+  ],
+  "design_notes": "Lines 73-76: all international air reservations must be made through the online booking tool or the travel agency, except in documented extreme cases necessitated by business needs or safety; the footnote (line 84) says cost is not a business need. So not the website fare: the lowest economy fare the tool lists, Aer Lingus $688."
+}

@@ -1,0 +1,171 @@
+{
+  "id": "birch-ember",
+  "category": "easy",
+  "overlays": [
+    "dearer_option"
+  ],
+  "twin_of": "",
+  "twin_fact": "",
+  "flag_twins": [],
+  "ambiguity_note": "none",
+  "request": "I'm presenting at the European transplant congress in Paris on February 9th, flying overnight from Atlanta on the 8th. Dr. Hale approved business class for this trip in writing. Business, please.",
+  "trip": {
+    "traveller_name": "Daniel Osei",
+    "traveller_title": "Associate Professor of Surgery",
+    "passenger": "EMPLOYEE",
+    "accompanies": "",
+    "origin": "ATL",
+    "destination": "CDG",
+    "travel_date": "2027-02-08",
+    "return_date": "",
+    "booking_date": "2027-01-11",
+    "must_arrive_by": "",
+    "purpose": "Invited talk at a European transplant congress",
+    "purpose_kind": "CONFERENCE",
+    "funding": "DEPARTMENT_FUNDS",
+    "sponsor": "",
+    "sponsor_terms": [],
+    "requested_cabin": "BUSINESS",
+    "preferred_airline": "",
+    "self_paid_upgrade": "NONE",
+    "outside_option": "NONE",
+    "outside_option_detail": "",
+    "sign_offs": [
+      {
+        "role": "SUPERVISOR",
+        "name": "Miriam Hale",
+        "title": "Chair, Department of Surgery",
+        "subject": "TRIP",
+        "subject_to_policy": false,
+        "terms": "Approved the trip: transplant congress, Paris."
+      },
+      {
+        "role": "OFFICER",
+        "name": "Dr. Miriam Hale",
+        "title": "Executive Vice President for Surgical Services",
+        "subject": "PREMIUM_CABIN",
+        "subject_to_policy": false,
+        "terms": "Approved business class for this trip."
+      },
+      {
+        "role": "EXPORT_COMPLIANCE",
+        "name": "VUMC Export Compliance",
+        "title": "Export Compliance Office",
+        "subject": "INTERNATIONAL_QUESTIONNAIRE",
+        "subject_to_policy": false,
+        "terms": "Approved the traveller's International Travel Questionnaire for this trip."
+      }
+    ],
+    "travelling_with": [],
+    "notes": []
+  },
+  "world": {
+    "searches": [
+      {
+        "name": "main",
+        "origin": "ATL",
+        "destination": "CDG",
+        "date": "2027-02-08",
+        "return_date": "",
+        "background": 0,
+        "flights": {
+          "delta": {
+            "carrier": "DL",
+            "depart": "17:30",
+            "minutes": [
+              515
+            ]
+          },
+          "airfrance": {
+            "carrier": "AF",
+            "depart": "19:10",
+            "minutes": [
+              520
+            ]
+          }
+        },
+        "offers": [
+          {
+            "slot": "delta-economy",
+            "flight": "delta",
+            "cabin": "ECONOMY",
+            "fare_cents": 104500
+          },
+          {
+            "slot": "delta-business",
+            "flight": "delta",
+            "cabin": "BUSINESS",
+            "fare_cents": 462000
+          },
+          {
+            "slot": "airfrance-economy",
+            "flight": "airfrance",
+            "cabin": "ECONOMY",
+            "fare_cents": 98000
+          },
+          {
+            "slot": "airfrance-business",
+            "flight": "airfrance",
+            "cabin": "BUSINESS",
+            "fare_cents": 438500
+          }
+        ]
+      }
+    ]
+  },
+  "expected": {
+    "decision": "BOOK",
+    "offer_slots": [
+      "airfrance-business"
+    ],
+    "cabins": [
+      "BUSINESS"
+    ],
+    "reason_codes": [
+      "INTERNATIONAL_LONG_FLIGHT",
+      "LONG_FLIGHT_APPROVED"
+    ],
+    "approvers": [
+      "NONE",
+      "SUPERVISOR",
+      "OFFICER",
+      "EXPORT_COMPLIANCE"
+    ],
+    "clauses": [
+      "AIR_TRAVEL",
+      "FARES_AND_CLASS"
+    ],
+    "unclear_phrase": ""
+  },
+  "must_keep": [
+    {
+      "lines": [
+        102,
+        108
+      ],
+      "sha256": "10cb564445281b5d271d10aa332464187b2004d391f6bab1d50eb901fa945b92",
+      "quote": "Business class or first-class seating may be used only if the traveler's applicable officer approves it in writing in advance. One of the following conditions should be met:  Any flight segment has a scheduled in-air flying time more than four hours; or  The total scheduled in-air flight time for all flight segments is more than seven hours; or  A medical justification has been documented and approved by the Equal Opportunity, Affirmative Action, and Disability Services Department (EAD).",
+      "why": "business or first only with the officer's written approval in advance, and a condition"
+    },
+    {
+      "lines": [
+        383,
+        384
+      ],
+      "sha256": "6f192f953c11892928423539b3a991a071b90bf409064fa7dfa3c8a706c874b1",
+      "quote": "Travelers are responsible for ensuring that they have the necessary approval from their supervisor to take a trip prior to committing VUMC funds or incurring expenses.",
+      "why": "the supervisor's approval of the trip before committing funds"
+    }
+  ],
+  "distractors": [
+    {
+      "lines": [
+        78,
+        83
+      ],
+      "quote": "Submission of approval of the Questionnaire is required with the filing of the traveler's expense report in Concur.",
+      "why": "the questionnaire is on file and matters at expense time"
+    }
+  ],
+  "design_notes": "Lines 102-104: the officer approved business in writing in advance, and the nonstop is scheduled at 515-520 minutes, over four hours. Business is permitted and asked for: the cheapest business fare, Air France $4,385. Department funds, so Fly America (line 149) does not arise."
+}
