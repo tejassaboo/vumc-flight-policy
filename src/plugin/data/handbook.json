@@ -8,7 +8,7 @@
   "raw_pdf_sha256": "2f2ab043ebca74b89505e6b177d2d8ef15a303e2bf875fba8f5759b630338ee8",
   "words": 5837,
   "lines": 809,
-  "source": "not recorded locally (UNVERIFIED); the raw PDF (pilot_work/originals/vumc/raw_vumc.pdf) is the pinned copy",
+  "source": "https://www.vumc.org/surgical-sciences/sites/default/files/public_files/PDF/TravelPolicy27705_0.pdf; byte-identical to the pinned raw PDF (sha256 checked 2026-11-25); the copy is on a VUMC department site, the live policy is in VUMC PowerPolicy",
   "frozen_on": "2026-11-24",
   "scenario_count": 24,
   "currency": "USD",
