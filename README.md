@@ -1,5 +1,7 @@
 # VUMC Flight Policy
 
+**Source of the handbook:** https://www.vumc.org/surgical-sciences/sites/default/files/public_files/PDF/TravelPolicy27705_0.pdf. The agent reads it verbatim (bundled at `src/plugin/data/policy.txt`); flights, fares and trips are synthetic.
+
 **No affiliation with Vanderbilt University Medical Center.** The policy is VUMC's published *Finance Policy FIN
 4.7, Travel* (effective June 2021), bundled verbatim for research. Its public URL was not recorded when it was
 downloaded (`pilot_work/originals/MANIFEST.md` marks it UNVERIFIED; the raw PDF and its sha256 are the pinned copy):
